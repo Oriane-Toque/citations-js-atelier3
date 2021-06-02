@@ -1,4 +1,4 @@
-var quotes = [
+const quotes = [
     {
         quote : "Nous ne pouvons plus nous permettre de laisser le site sans surveillance, je souhaite qu’il soit sur l’un de vos onglets en permanence et que vous y jetiez un œil tout au long de la journée.",
         author : "webagencyfail.com"
