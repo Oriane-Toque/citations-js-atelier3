@@ -27,6 +27,8 @@ const app = {
         document.getElementById('nav-next').addEventListener('click', app.handleClickOnNextButton);
         // TODO attache la méthode app.handleClickOnPreviousButton à l'évènement "click" sur le bouton "affiche la citation précédente"
         document.getElementById('nav-prev').addEventListener('click', app.handleClickOnPreviousButton);
+        // TODO attache la méthode app.handleClickOnLastButton à l'évènement "click" sur le bouton "affiche la dernière citation"
+        document.getElementById('nav-last').addEventListener('click', app.handleClickOnLastButton);
     },
     // Méthode gérant le click pour afficher le form d'ajout
     handleClickOnDisplayAddFormButton: function(evt) {
@@ -58,6 +60,15 @@ const app = {
           app.currentQuoteIndex--;
           app.displayCurrentQuote();
         }
+    },
+    // Je crée une méthode dédiée à la gestion du click sur le bouton "Last"
+    handleClickOnLastButton: function() {
+      console.log('click on last');
+
+      if(app.currentQuoteIndex != quotes.length - 1) {
+        app.currentQuoteIndex = quotes.length - 1;
+        app.displayCurrentQuote();
+      }
     }
   };
   
