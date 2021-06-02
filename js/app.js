@@ -16,8 +16,6 @@ const app = {
     init: function() {
         // attache la méthode app.handleClickOnDisplayAddFormButton à l'évènement "click" sur le bouton "ajouter une citation"
         document.getElementById('btnDisplayAddForm').addEventListener('click', app.handleClickOnDisplayAddFormButton);
-        // attache la méthode app.handleClickOnNextButton à l'évènement "click" sur le bouton "affiche la citation suivante"
-        document.getElementById('nav-next').addEventListener('click', app.handleClickOnNextButton);
 
         // TODO affiche la première citation de fail
         // j'écrase le contenue texte de mon élément par la 1ère citation contenue dans le module quotes
@@ -25,7 +23,8 @@ const app = {
         // je fais pareil pour l'auteur
         app.authorElement.textContent = quotes[0].author;
 
-        // TODO attacher la méthode app.handleClickOnNextButton à l'évènement "click" sur le bouton "next" (id="nav-next")
+        // TODO attache la méthode app.handleClickOnNextButton à l'évènement "click" sur le bouton "affiche la citation suivante"
+        document.getElementById('nav-next').addEventListener('click', app.handleClickOnNextButton);
     },
     // Méthode gérant le click pour afficher le form d'ajout
     handleClickOnDisplayAddFormButton: function(evt) {
@@ -43,10 +42,12 @@ const app = {
     handleClickOnNextButton: function() {
       console.log('click on next');
 
-      app.currentQuoteIndex++;
+      if(app.currentQuoteIndex < quotes.length - 1) {
+        app.currentQuoteIndex++;
+        app.displayCurrentQuote();
+      }
 
-      app.displayCurrentQuote();
-    }
+    },
   };
   
   // Appel "synchronisé" de la méthode init
