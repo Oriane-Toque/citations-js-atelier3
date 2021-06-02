@@ -39,7 +39,13 @@ const app = {
     handleClickOnDisplayAddFormButton: function(evt) {
         console.log('click to display form');
 
-        document.getElementById('divAddQuote').classList.remove('d-none');
+        const currentForm = document.getElementById('divAddQuote');
+
+        if(currentForm.matches('.d-none') === true) {
+            currentForm.classList.remove('d-none');
+        } else {
+            currentForm.classList.add('d-none');
+        }
     },
     // Méthode permettant d'ajouter des citations
     handleSubmitFormAddQuote: function(evt) {
