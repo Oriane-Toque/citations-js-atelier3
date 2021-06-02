@@ -58,11 +58,15 @@ const app = {
         // récupération de l'élément contenant la citation soumise + sa valeur
         const inputQuoteElement = document.getElementById('input-quote');
         const inputQuoteValue = inputQuoteElement.value;
+        // clear input
+        inputQuoteElement.value = '';
         /* console.log(inputQuoteValue); */
 
         // récupération de l'élément contenant l'auteur associé soumis + sa valeur
         const inputAuthorElement = document.getElementById('input-author');
         const inputAuthorValue = inputAuthorElement.value;
+        // clear input
+        inputAuthorElement.value = '';
         /* console.log(inputAuthorValue); */
 
         // puis on ajoute nos nouvelles données à notre tableau quotes
