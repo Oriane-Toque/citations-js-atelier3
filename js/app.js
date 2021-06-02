@@ -31,12 +31,25 @@ const app = {
         document.getElementById('nav-last').addEventListener('click', app.handleClickOnLastButton);
         // TODO attache la méthode app.handleClickOnFirstButton à l'évènement "click" sur le bouton "affiche la première citation"
         document.getElementById('nav-first').addEventListener('click', app.handleClickOnFirstButton);
+
+        // TODO attache la méthode app.handleSubmitFormAddQuote à l'évènement "submit" sur le formulaire "ajoute une citation et son auteur"
+        document.getElementById('addQuoteForm').addEventListener('submit', app.handleSubmitFormAddQuote);
     },
     // Méthode gérant le click pour afficher le form d'ajout
     handleClickOnDisplayAddFormButton: function(evt) {
         console.log('click to display form');
 
         document.getElementById('divAddQuote').classList.remove('d-none');
+    },
+    // Méthode permettant d'ajouter des citations
+    handleSubmitFormAddQuote: function(evt) {
+
+        // stoppe la réorientation à la soumission du formulaire
+        evt.preventDefault();
+
+        console.log('ajout d\'une citation');
+
+
     },
     // Méthode permettant de modifier le DOM pour afficher la quote "courante"
     displayCurrentQuote: function() {
