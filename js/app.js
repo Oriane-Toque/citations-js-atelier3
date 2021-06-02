@@ -25,6 +25,8 @@ const app = {
 
         // TODO attache la méthode app.handleClickOnNextButton à l'évènement "click" sur le bouton "affiche la citation suivante"
         document.getElementById('nav-next').addEventListener('click', app.handleClickOnNextButton);
+        // TODO attache la méthode app.handleClickOnPreviousButton à l'évènement "click" sur le bouton "affiche la citation précédente"
+        document.getElementById('nav-prev').addEventListener('click', app.handleClickOnPreviousButton);
     },
     // Méthode gérant le click pour afficher le form d'ajout
     handleClickOnDisplayAddFormButton: function(evt) {
@@ -48,6 +50,15 @@ const app = {
       }
 
     },
+    // Je crée une méthode dédiée à la gestion du click sur le bouton "Previous"
+    handleClickOnPreviousButton: function() {
+        console.log('click on previous');
+  
+        if(app.currentQuoteIndex > 0) {
+          app.currentQuoteIndex--;
+          app.displayCurrentQuote();
+        }
+    }
   };
   
   // Appel "synchronisé" de la méthode init
